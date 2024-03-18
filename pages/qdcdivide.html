@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/qdcurvedivide.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+    });
+    </script>
+    <title>Quad C Divider</title>
+</head>
+
+<body>
+    <h2>Quad C Divider</h2>
+    <div>
+      <img src="/image/qdcdivide.png" alt="d2.png">
+    </div>
+    <form>
+        <label for="side1">উত্তর বাহু :  <small>(মনে রাখতে হবে এইটা সেই বাহু, যেটা আপনি সমান রাখতে চাচ্ছেন)</small>   </label>
+            <input type="number" id="side1" name="side1" required>
+     
+        <label for="side2">দক্ষিণ বাহু :  </label>
+            <input type="number" id="side2" name="side2" required>
+        
+        <label for="side3">পশ্চিম বাহু : </label>
+            <input type="number" id="side3" name="side3" required>
+        
+        <label for="side4">পূর্ব বাহু : </label>
+            <input type="number" id="side4" name="side4" required>
+        
+        <label for="diagonalChoice">
+            কোন কর্ণটা দিবেন ?</label>
+            <select name="diagonalChoice" id="diagonalChoice">
+              <option value="X">X কর্ণ</option>
+              <option value="Y">Y কর্ণ</option>
+            </select>
+        
+        <label for="diagonal">কর্ণের দৈর্ঘ্য (ফিট)</label>
+            <input type="number" id="diagonal" name="diagonal" required>
+       
+        <label for="division">কতো ভাগে ভাগ করতে চাচ্ছেন?</label>
+            <input type="number" id="division" name="division" required>
+       
+       <label for="NorNot">আপনি কি প্রতিটি প্লটের উত্তর বাহুর মান দিতে চাচ্ছেন?</label>
+            <select name="NorNot" id="NorNot">
+              <option value="Auto">Auto রাখবো</option>
+              <option value="No" >মান নির্দিষ্ট করে দিবো</option>
+            </select>
+       
+        <label for="equalPlotorNot">আপনি কি প্রতিটি প্লটের ক্ষেত্রফল সমান রাখতে চাচ্ছেন?</label>
+            <select name="equalPlotorNot" id="equalPlotorNot">
+              <option value="Yes">হ্যাঁ</option>
+              <option value="No">না</option>
+            </select>
+                
+   <fieldset>
+     <br>
+    <!--<label for="nSegment">উত্তর:</label>
+    <input type="number" id="nSegment" name="nSegment">
+-->
+   <!-- <label for="sSegment">দক্ষিণ:</label>
+    <input type="number" id="sSegment" name="sSegment"> -->
+
+    <label for="wSegment">পশ্চিম:</label>
+    <input type="number" id="wSegment" name="wSegment">
+
+    <label for="eSegment">পূর্ব:</label>
+    <input type="number" id="eSegment" name="eSegment">
+   
+    </fieldset>
+        <br>
+        
+        <button type="button" onclick="calculateQuadrilateral()">Calculate</button>
+    </form>
+    
+    <form id="area_input_per_plot" style="display:none;" >
+      
+    </form>
+    <form id="N_input_per_plot" style="display:none;" ></form>
+    <p id="test"></p>
+    <div id="output"></div>
+    <div id="formula_list">
+      <p style="font-size: 15px;">এখানে যে যে সূত্র ব্যাবহার হয়েছ: </p>
+      <ol>
+
+<li>
+  $$
+c^2 = a^2 + b^2 - 2ab \cos(\gamma)
+$$
+
+where:
+$$
+\begin{align*}
+c & : \text{third side length} \\
+a & : \text{first side length} \\
+b & : \text{second side length} \\
+\gamma & : \text{angle opposite third side}
+\end{align*}
+$$
+
+</li>
+<li>
+  $$
+\text{Area}(\triangle) = \frac{1}{2} \cdot a \cdot b \cdot \sin(C)
+$$
+
+where:
+$$
+\begin{align*}
+\text{Area}(\triangle) & : \text{Area of the triangle} \\
+a & : \text{Length of side } a \\
+b & : \text{Length of side } b \\
+C & : \text{Angle opposite side } c
+\end{align*}
+$$
+
+</li>
+<li>
+  \[
+A = \sqrt{s \cdot (s - a) \cdot (s - b) \cdot (s - c)}
+\]
+
+where \(s\) is the semi-perimeter, calculated as:
+
+\[
+s = \frac{a + b + c}{2}
+\]
+
+</li>
+<li>
+  
+  <div>
+  \[
+  \text{Radius} = \frac{c^2}{8h_{\text{segment}}} + \frac{h_{\text{segment}}}{2}
+  \]
+
+  \[
+  \text{Segment Area:} \quad A_{\text{segment}} = \frac{1}{2}r^2(\theta - \sin\theta)
+  \]
+  \[
+  \text{Segment Height:} \quad h_{\text{segment}} = r - \sqrt{r^2 - \left(\frac{c}{2}\right)^2}
+  \]
+  \[
+  \text{Chord Length:} \quad c = 2r\sin\left(\frac{\theta}{2}\right)
+  \]
+
+ 
+
+ 
+  \[
+  \text{Arc Length:} \quad s = r\theta
+  \]
+
+  \[
+  \text{Sector Area:} \quad A_{\text{sector}} = \frac{1}{2} r^2 \theta
+  \]
+
+ 
+ 
+  \[
+  \text{Area:} \quad \frac{1}{2} r^2 \left(\theta - \sin\theta\right) = 0.5 r^2 \left(\theta - \sin\theta\right)
+  \]
+  \[
+  \text{Perimeter:} \quad r \left(\theta + 2 \sin\left(\frac{\theta}{2}\right)\right) \]\[ = r \left(\theta + 2 \sin\left(0.5 \theta\right)\right)
+  \]
+ 
+</div>
+
+</li>
+
+  </ol>
+      
+    </div>
+    <script src="/js/qdcdivide.js">
+    
+        // This code is protected by copyright © 2024 Sadiqullah. All rights reserved.
+        // Contact: sadiqullah4017@gmail.com
+    </script>
+    
+    <footer>
+        <p>&copy; 2024 Sadiqullah. All rights reserved. <br>
+        Contact: <a href="mailto:sadiqullah4017@gmail.com">sadiqullah4017@gmail.com</a><br>
+        <a href="https://www.facebook.com/sadiqullah.hossen">Sadiqullah's Facebook </a>
+        </p>
+    </footer>
+</body>
+
+</html> 
+
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/segment.css">
+    <title>Segment Area</title>
+</head>
+
+<body>
+    <h2>Segment</h2>
+    <div>
+      <img src="/image/segment.png" alt="d2.png">
+    </div>
+    <form>
+        <label for="side1">উচ্চতা (H) : <!-- <small>(মনে রাখতে হবে এইটা সেই বাহু, যেটা আপনি সমান রাখতে চাচ্ছেন)</small>   --></label>
+            <input type="number" id="H" placeholder="ফিট" name="H" required>
+     
+        <label for="side2">ভুমি (W) :  </label>
+            <input type="number" id="W" placeholder="ফিট" name="W" required>
+        
+      <!--  <label for="side3">পশ্চিম বাহু : </label>
+            <input type="number" id="side3" name="side3" required>
+        
+        <label for="side4">পূর্ব বাহু : </label>
+            <input type="number" id="side4" name="side4" required>
+        -->
+        <label for="choice">
+            কোন ধরনের সেগমেন্ট ?</label>
+            <select name="choice" id="choice">
+              <option value="circle">(বৃত্তাংশ)Circular Segment</option>
+              <option value="parabola">(পরাবৃত্ত) Parabolic Segment</option>
+            <!--  <option value="ellipse">(হাফ উপবৃত্ত) Half Ellipse</option>-->
+            </select>
+        
+       <!-- <label for="diagonal">কর্ণের দৈর্ঘ্য (ফিট)</label>
+            <input type="number" id="diagonal" name="diagonal" required>
+       
+        <label for="division">কতো ভাগে ভাগ করতে চাচ্ছেন?</label>
+            <input type="number" id="division" name="division" required>
+       
+        <label for="NorNot">আপনি কি প্রতিটি প্লটের উত্তর বাহুর মান দিতে চাচ্ছেন?</label>
+            <select name="NorNot" id="NorNot">
+              <option value="Auto">Auto রাখবো</option>
+              <option value="No" >মান নির্দিষ্ট করে দিবো</option>
+            </select>
+        
+        <label for="equalPlotorNot">আপনি কি প্রতিটি প্লটের ক্ষেত্রফল সমান রাখতে চাচ্ছেন?</label>
+            <select name="equalPlotorNot" id="equalPlotorNot">
+              <option value="Yes">হ্যাঁ</option>
+              <option value="No">না</option>
+            </select>
+        -->
+        
+        <button type="button" onclick="calculateQuadrilateral()">Calculate</button>
+   <!-- </form>
+    <form id="area_input_per_plot" style="display:none;" >
+      
+    </form>
+    <form id="N_input_per_plot" style="display:none;" ></form>
+    <p id="test"></p>
+   --> <div id="output"></div>
+    <script src="/js/segment.js">
+    
+        // This code is protected by copyright © 2024 Sadiqullah. All rights reserved.
+        // Contact: sadiqullah4017@gmail.com
+    </script>
+    <footer>
+        <p>&copy; 2024 Sadiqullah. All rights reserved. <br>
+        Contact: <a href="mailto:sadiqullah4017@gmail.com">sadiqullah4017@gmail.com</a><br>
+        <a href="https://www.facebook.com/sadiqullah.hossen">Sadiqullah's Facebook </a>
+        </p>
+    </footer>
+</body>
+
+</html> 

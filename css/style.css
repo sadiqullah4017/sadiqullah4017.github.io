@@ -1,0 +1,56 @@
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.tiro-bangla-regular {
+  font-family: "Tiro Bangla", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+body {
+            font-family: "Roboto", Arial, sans-serif;
+            margin: 0;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #000;
+            color: #ffffff;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        
+        p {
+            display: inline-block;
+            width: 100%;
+            flex-direction: column;
+            margin-bottom: 20px;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            font-family: "Tiro Bangla";
+        }
+
+        
+       
+        a{
+          text-decoration: none;
+          color: lightgray;
+        }
+        
+        
+        img {
+          position: relative;
+          height: auto;
+          width:100%;
+        }
+        
+        footer {
+          padding-top: 50px;
+        }

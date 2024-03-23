@@ -5,6 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/segment.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+    });
+    </script>
     <title>Segment Area</title>
 </head>
 
@@ -61,6 +80,92 @@
     <form id="N_input_per_plot" style="display:none;" ></form>
     <p id="test"></p>
    --> <div id="output"></div>
+       <div id="formula_list" style="font-size: 10px;">
+      <p style="font-size: 15px;">এখানে যে যে সূত্র ব্যাবহার হয়েছে: </p>
+      <ol>
+
+<li>
+  
+  \[
+  \text{Radius} = \frac{c^2}{8h_{\text{segment}}} + \frac{h_{\text{segment}}}{2}
+  \]
+
+  \[
+  \text{Segment Area:} \quad A_{\text{segment}} = \frac{1}{2}r^2(\theta - \sin\theta)
+  \]
+  \[
+  \text{Segment Height:} \quad h_{\text{segment}} = r - \sqrt{r^2 - \left(\frac{c}{2}\right)^2}
+  \]
+  \[
+  \text{Chord Length:} \quad c = 2r\sin\left(\frac{\theta}{2}\right)
+  \]
+
+ 
+
+ 
+  \[
+  \text{Arc Length:} \quad s = r\theta
+  \]
+
+  \[
+  \text{Sector Area:} \quad A_{\text{sector}} = \frac{1}{2} r^2 \theta
+  \]
+
+ 
+ 
+  \[
+  \text{Area:} \quad \frac{1}{2} r^2 \left(\theta - \sin\theta\right) = 0.5 r^2 \left(\theta - \sin\theta\right)
+  \]
+  \[
+  \text{Perimeter:} \quad r \left(\theta + 2 \sin\left(\frac{\theta}{2}\right)\right) \]\[ = r \left(\theta + 2 \sin\left(0.5 \theta\right)\right)
+  \]
+ 
+
+</li>
+<li>
+  \[
+\text{Area of the parabolic segment} = \left(\frac{2}{3}\right) \times H \times W
+\]
+
+Where:
+
+\[
+H = \text{height of parabolic segment}
+\]
+
+\[
+W = \text{length of parabolic segment}
+\]
+
+\[
+\text{Area} = \text{area of parabolic segment}
+\]
+
+</li>
+<li>
+  \[
+\text{Area of the half ellipse} = \left(\frac{\pi}{4}\right) \times H \times W
+\]
+
+Where:
+
+\[
+H = \text{height of half ellipse}
+\]
+
+\[
+W = \text{length of half ellipse}
+\]
+
+\[
+\text{Area} = \text{area of half ellipse}
+\]
+
+</li>
+
+  </ol>
+      
+    </div>
     <script src="/js/segment.js">
     
         // This code is protected by copyright © 2024 Sadiqullah. All rights reserved.

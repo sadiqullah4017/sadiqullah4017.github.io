@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/qd.css">   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+    });
+    </script>
+    <title>Circle Measure</title>
+</head>
+
+<body>
+    <h2>Circle Measure</h2>
+    <div>
+      <img src="/image/circleDivide.png" style = "width: 80%; padding-left: 10% " >
+    </div>
+    <form>
+        <label for="R">ব্যাসার্ধ : <!-- <small>(মনে রাখতে হবে এইটা সেই বাহু, যেটা আপনি সমান রাখতে চাচ্ছেন)</small>   --></label>
+          <input type="number" id="R" placeholder="ফুট" name="R" required>
+     <!--
+        <label for="b">দৈর্ঘ্য ২:  </label>
+            <input type="number" id="b" placeholder="দৈর্ঘ্য ২" name="a" required>
+        
+        <label for="h">উচ্চতা <small>(সমান্তরাল বাহুদয়ের লম্ব দূরত্ব)</small>: </label>
+            <input type="number" id="h" name="h" required>
+    -->    <!--
+        <label for="side4">পূর্ব বাহু : </label>
+            <input type="number" id="side4" name="side4" required>
+        -->
+    <!--    <label for="choice">
+            কোন ধরনের সেগমেন্ট ?</label>
+            <select name="choice" id="choice">
+              <option value="circle">(বৃত্তাংশ)Circular Segment</option>
+              <option value="parabola">(পরাবৃত্ত) Parabolic Segment</option>
+              <option value="ellipse">(হাফ উপবৃত্ত) Half Ellipse</option>
+            </select>
+        -->
+       <!-- <label for="diagonal">কর্ণের দৈর্ঘ্য (ফিট)</label>
+            <input type="number" id="diagonal" name="diagonal" required>
+       -->
+        <label for="division">কতো ভাগে ভাগ করবেন?</label>
+            <input type="number" id="division" name="division" required>
+       <!--
+        <label for="NorNot">আপনি কি প্রতিটি প্লটের উত্তর বাহুর মান দিতে চাচ্ছেন?</label>
+            <select name="NorNot" id="NorNot">
+              <option value="Auto">Auto রাখবো</option>
+              <option value="No" >মান নির্দিষ্ট করে দিবো</option>
+            </select>
+        -->
+        <label for="equalPlotorNot">প্রতি প্লটের ক্ষেত্রফল সমান থাকবে?</label>
+            <select name="equalPlotorNot" id="equalPlotorNot">
+              <option value="Yes">হ্যাঁ</option>
+              <option value="No">না</option>
+            </select>
+        
+        
+        <button type="button" onclick="divideCircle()">Calculate</button><br><br>
+    </form>
+    <form id="area_input_per_plot" style="display:none;"></form>
+
+      <div id="output"></div>
+       <div id="formula_list" style="font-size: 10px;">
+      <p style="font-size: 15px;">এখানে যে যে সূত্র ব্যাবহার হয়েছে: </p>
+      <ol>
+        <li>
+      
+
+To find the value of $\theta$ from the non-convertible implicit function:
+
+\[
+\text{Segment Area:} \quad A_{\text{segment}} = \frac{1}{2}r^2(\theta - \sin\theta)
+\]
+
+We used the Newton-Raphson method. The iterative formula for Newton's method is:
+
+\[
+\theta_{n+1} = \theta_n - \frac{f(\theta_n)}{f'(\theta_n)}
+\]
+
+where $f(\theta)$ is the given function, and $f'(\theta)$ is its derivative.
+
+For $f(\theta) = A_{\text{segment}} - \frac{1}{2}r^2(\theta - \sin\theta)$, the derivative is:
+
+\[
+f'(\theta) = \frac{d}{d\theta} \left( A_{\text{segment}} - \frac{1}{2}r^2(\theta - \sin\theta) \right)
+\]
+
+To find the derivative, apply the chain rule:
+
+\[
+f'(\theta) = \frac{d}{d\theta} A_{\text{segment}} - \frac{d}{d\theta} \frac{1}{2}r^2(\theta - \sin\theta)
+\]
+
+After differentiation and simplification, we get:
+
+\[
+f'(\theta) = r^2\left(1 - \cos\theta\right)
+\]
+
+Now, we can iterate using the Newton-Raphson formula until convergence:
+
+\[
+\theta_{n+1} = \theta_n - \frac{A_{\text{segment}} - \frac{1}{2}r^2(\theta_n - \sin\theta_n)}{r^2\left(1 - \cos\theta_n\right)}
+\]
+
+<p>For more details on Newton's method, you can visit <a href="https://en.m.wikipedia.org/wiki/Newton%27s_method">Click Here</a></p>
+<p>For a visual demonstration, you can watch the following YouTube video:
+    <a href="https://youtu.be/YSl37OYMLFw">Click Here</a></p>
+    
+    <p>অথবা, এতো কিছু বাদ দিয়ে calculator ব্যাবহার করেন</p>
+        </li>
+          <li>
+
+
+Area of a circle:
+\[
+\text{Area} = \pi \times R^2
+\]
+Where:
+\[
+R = \text{radius}
+\]
+\[
+D = \text{diameter} = 2 \times R
+\]
+\[
+P = \text{perimeter} = 2 \times \pi \times R
+\]
+
+              
+          </li>
+          <li>
+            
+  \[
+  \text{Radius, r} = \frac{c^2}{8h_{\text{segment}}} + \frac{h_{\text{segment}}}{2}
+  \]
+
+  \[
+  \text{Segment Area:} \quad A_{\text{segment}} = \frac{1}{2}r^2(\theta - \sin\theta)
+  \]
+  \[
+  \text{Segment Height:} \quad h_{\text{segment}} = r - \sqrt{r^2 - \left(\frac{c}{2}\right)^2}
+  \]
+  \[
+  \text{Chord Length:} \quad c = 2r\sin\left(\frac{\theta}{2}\right)
+  \]
+
+ 
+
+ 
+  \[
+  \text{Arc Length:} \quad s = r\theta
+  \]
+
+  \[
+  \text{Sector Area:} \quad A_{\text{sector}} = \frac{1}{2} r^2 \theta
+  \]
+
+
+
+          </li>
+      </ol>   
+  </div>
+    <script src="/js/circleDivide.js">
+    
+        // This code is protected by copyright © 2024 Sadiqullah. All rights reserved.
+        // Contact: sadiqullah4017@gmail.com
+    </script>
+    <footer>
+        <p>&copy; 2024 Sadiqullah. All rights reserved. <br>
+        Contact: <a href="mailto:sadiqullah4017@gmail.com">sadiqullah4017@gmail.com</a><br>
+        <a href="https://www.facebook.com/sadiqullah.hossen">Sadiqullah's Facebook </a>
+        </p>
+    </footer>
+</body>
+
+</html> 

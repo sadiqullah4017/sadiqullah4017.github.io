@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en"><head>
+    
+
+    <title>বাংলা কনভার্টার — QDC </title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="css/main1.css" rel="stylesheet" type="text/css">
+    <link href="css/center.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/bijoy2uni.js"></script>
+    <script type="text/javascript" src="js/uni2bijoy.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/layout.js"></script>
+    <script type="text/javascript" src="js/count.js"></script>
+    <script type="text/javascript" src="js/js1.js"></script>
+</head>
+<body>
+    <table width="90%" border="0" align="center" bgcolor="#181818" style="margin: auto;">
+        <tbody>
+            <tr>
+                <td width="100%" align="center">
+                    <table width="100%" border="0">
+                        <tbody>
+                            <tr>
+                                <td align="center" height="80" valign="middle">
+                                    <div style="font-family:Arial, Solaimanlipi, Helvetica, sans-serif;">
+                                        <h1>QuadDividerPro Bangla converter</h1>
+                                    </div>
+                                    <p>Programmer <strong>Sadiqullah</strong><br> <a href="https://wa.me/qr/PIJTMDWMITWSA1" target="_blank">WhatsApp - 01401718917</a><br> __<small>Founder of QuadDivderPro</small></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <textarea class="unicode_textarea" id="EDT" name="textarea" autofocus="autofocus" value="" placeholder="এখানে লিখুন"></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" height="60px" valign="middle">
+                                    <div class="convert_button_left">
+                                               <input class="unicoding"  onclick="ConvertToTextArea('CONVERTEDT');" type="button" value="Convert" name="ConvertToAsciiButton">
+                                <!--     <input class="bijoy_butn" onclick="ConvertToTextArea('CONVERTEDT');" type="button" value="" name="ConvertToAsciiButton">
+                                     <!--  <input class="unicode_button" onclick="ConvertFromTextArea('CONVERTEDT');" type="button" value="" name="ConvertButton">
+                                  -->   <input class="resetting" type="button" value="Delete" onclick="ClearInput();">
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td align="center">
+                                    <div>
+<textarea class="bijoy_textarea" id="CONVERTEDT" autofocus="autofocus" value="" placeholder="এখান থেকে কপি করুন"></textarea>
+<button id="copyButton">Copy</button>
+
+<script>
+    document.getElementById("copyButton").addEventListener("click", function() {
+        var textarea = document.getElementById("CONVERTEDT");
+        textarea.select();
+        document.execCommand("copy");
+        alert("Text copied to clipboard");
+    });
+</script> </div><br>
+                                </td>
+                            </tr>
+
+                         <tr>
+                                <td>
+                                    <footer>
+    <p>Developed by Sadiqullah, founder of QuadDividerPro – Land Survey</p>
+    <p>Connect with us:</p>
+    <ul>
+        <li><a href="https://www.facebook.com/sadiqullah.hossen" target="_blank">Facebook</a></li>
+        <li><a href="https://wa.me/qr/PIJTMDWMITWSA1" target="_blank">WhatsApp</a></li>
+        <li><a href="mailto:sadiqullah4017@gmail.com" target="_blank">Email</a></li>
+        <li><a href="https://youtube.com/@QuadDividerPro?si=jgwui-H_SArsfSGF" target="_blank">YouTube</a></li>
+    </ul>
+</footer>      </td>
+                            </tr>
+                            
+
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        function ClearInput()
+        {
+            document.getElementById("EDT").value='';
+            document.getElementById("CONVERTEDT").value='';
+            document.getElementById("EDT").focus();
+        }
+    </script>
+
+</body></html>

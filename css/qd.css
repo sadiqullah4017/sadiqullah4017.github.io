@@ -1,0 +1,150 @@
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #000;
+            color: #ffffff;
+        }
+        .body {
+          margin: 20px
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 70%;
+            flex-direction: column;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        input[type="number"], select,
+        input[type="text"] {
+            width: calc(25% - 22px);
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid darkgray;
+            border-radius: 4px;
+            background-color: #2d2d2d;
+            color: #ffffff;
+            outline: none;
+        }
+        select {
+          width: 25%;
+        }
+
+        input[type="number"]:focus,
+        input[type="text"]:focus {
+            border-color: lightgray;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        #output, #coordinates_output {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #2d2d2d;
+            color: #ffffff;
+            display: none;
+        }
+        a{
+          text-decoration: none;
+          color: lightgray;
+        }
+        
+        
+        img {
+          position: relative;
+          height: auto;
+          width:100%;
+        }
+        
+        
+        #reset {
+          background: #ff4f4f;
+          width: auto;
+          margin: 10px 50px ;
+        
+        }
+   #quadrilateral-area {
+            margin: 0;
+            padding: 0;
+            width: 90vw;
+            height: 90vw;
+            border: 1px solid #777777;
+            background: 
+                linear-gradient(0deg, transparent 19px, #202020 20px),
+                linear-gradient(90deg, transparent 19px, #202020 20px);
+            background-size: 20px 20px;
+            overflow: hidden;
+            
+   }
+   
+    #toggleDiagonal{
+     float: right;
+     width: auto;
+     height: auto;
+     display: none;
+     height: 30px;
+     width: auto;
+     padding: 0 8px; 
+     margin:0 0 3px 0;
+     background: #2d2d2d;
+     cursor: pointer;
+   }
+  
+   #toggleDiagonal.activetoggleDiagonal{
+     background: darkred;
+   }
+   
+  #quadrilateral-area {
+    display : none;
+  }
+  .diagonalProperty {
+    display: none;
+  }
+        ol {
+            padding-left: 0; 
+            margin-left: 0; 
+        }
+        ol li {
+            padding-left: 0;
+            margin-left: 0; 
+        }
+        
+        hr {
+          width:  100%;
+          height: 1px;
+          background-color: #242424;
+          border: none;
+          margin: 30x 0;
+        }

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/load_calculator.css">
+    <link rel="stylesheet" href="/css/triangleDivide.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+    });
+    </script>
+    <title>Triangle Divider</title>
+</head>
+<body>
+<form id="calculator">
+    <h2>Triangle Divider</h2>
+    <img src="/image/triangleDivide2.png" alt="triangleMeasure.png">
+    <p>Sides length or Angle : </p><br>
+    <label for="sideA">বাহু a:</label>
+    <input type="number" id="sideA" placeholder="side a" value=""><br><br>
+    <label for="sideB">বাহু b:</label>
+    <input type="number" id="sideB" placeholder="side b" value=""><br><br>
+    <label for="sideC">বাহু c:</label>
+    <input type="number" id="sideC" placeholder="side c" value=""><br><br>
+    <label for="angleA">কোণ A (in degrees):</label>
+    <input type="number" id="angleA" placeholder="Angle A" value=""><br><br>
+    <label for="angleB">কোণ B (in degrees):</label>
+    <input type="number" id="angleB" placeholder="Angle B" value=""><br><br>
+    <label for="angleC">কোণ C (in degrees):</label>
+    <input type="number" id="angleC" placeholder="Angle C" value=""><br><br>
+    
+    <label for="division">কতো ভাগে ভাগ করতে চাচ্ছেন?</label>
+    <input type="number" id="division" name="division" required>
+    <label for="equalPlotorNot">আপনি কি প্রতিটি প্লটের ক্ষেত্রফল সমান রাখতে চাচ্ছেন?</label>
+            <select name="equalPlotorNot" id="equalPlotorNot">
+            <option value="Yes">হ্যাঁ</option>
+            <option value="No">না</option>
+            </select>
+            
+            
+    <button type="button"  id="calculationButoonFromHtml" >Calculate Area</button><br><br>
+    <button id="reset" type="reset">Reset</button>
+
+    
+</form>
+<form id="area_input_per_plot" style="display:none;" >
+         
+</form>
+<div id="output"></div>
+
+<div id="formula_list">
+      <p style="font-size: 15px;">এখানে যে যে সূত্র ব্যাবহার হয়েছে : </p>
+      
+      <ol>
+          <li >
+          <p style="font-size: 16px">Special thanks to Ranjit Saha Sir for providing the valuable formula. <br>Connect with Ranjit Saha <a href="https://www.facebook.com/profile.php?id=100048178591456">on Facebook</a>.</p>
+          </li>
+        <li>
+          $$
+          c^2 = a^2 + b^2 - 2ab \cos(\gamma)
+          $$
+
+          where:
+          $$
+          \begin{align*}
+          c & : \text{third side length} \\
+          a & : \text{first side length} \\
+          b & : \text{second side length} \\
+          \gamma & : \text{angle opposite third side}
+          \end{align*}
+          $$
+        </li>
+        <li>
+          $$
+          \text{Area}(\triangle) = \frac{1}{2} \cdot a \cdot b \cdot \sin(C)
+          $$
+
+          where:
+          $$
+          \begin{align*}
+          \text{Area}(\triangle) & : \text{Area of the triangle} \\
+          a & : \text{Length of side } a \\
+          b & : \text{Length of side } b \\
+          C & : \text{Angle opposite side } c
+          \end{align*}
+          $$
+        </li>
+        <li>
+          \[
+          A = \sqrt{s \cdot (s - a) \cdot (s - b) \cdot (s - c)}
+          \]
+
+          where \(s\) is the semi-perimeter, calculated as:
+
+          \[
+          s = \frac{a + b + c}{2}
+          \]
+        </li>
+        <li>
+          $$
+          \frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}
+          $$
+        </li>
+        <li>
+          $$
+          c = a \cos(B) + b \cos(A)
+          $$
+
+          $$
+          \begin{align*}
+          \\
+          a & : \text{length of side opposite angle } A \\
+          b & : \text{length of side opposite angle } B \\
+          c & : \text{length of side opposite angle } C \\
+          A & : \text{measure of angle opposite side } a \\
+          B & : \text{measure of angle opposite side } b \\
+          C & : \text{measure of angle opposite side } c \\
+          \end{align*}
+          $$
+        </li>
+        
+      </ol>
+</div>
+<footer>
+    <p>&copy; 2024 Sadiqullah. All rights reserved. <br>
+    Contact: <a href="mailto:sadiqullah4017@gmail.com">sadiqullah4017@gmail.com</a><br>
+    <a href="https://www.facebook.com/sadiqullah.hossen">Sadiqullah's Facebook </a>
+    </p>
+</footer>
+    <script src="/js/triangleDivide2.js"> </script>
+    <script src="/js/load_calculator.js"></script>
+</body>
+</html>

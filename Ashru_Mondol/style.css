@@ -1,0 +1,24 @@
+*{
+  color: #000;
+}
+a{
+  color: #f00;
+}
+body {
+    font-size: 15px;
+    margin: 20px 10px;
+    background: #f0fcff;
+}
+h2 {
+  text-align: center ;
+}
+.img {
+  width: 100%;
+  height: auto;
+}
+img{
+  width: 45%;
+}
+h5 {
+  font-size: 15px;
+}

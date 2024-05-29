@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/multi_triangle.css">
+  <link rel="stylesheet" href="/css/load_calculator.css">
+  <title>QuadDividerPro - Multiple Triangles</title>
+</head>
+<body>
+  
+  <div class="body">
+    <header>
+      <h1>Multiple Triangle</h1>
+      <p>একদিক ত্রিভূজ একসাথে Heron's Formula য় পরিমাপ । <small> জমিকে অনেকগুলা ত্রিভূজে ভাগ করে পরিমাপ করলে সঠিক পরিমাপ হয় </small> </p></header>
+    <div class="container">
+      
+      <div id="allInputContainer" class="all_input">
+        <div class="rowInput">
+          <input type="number" placeholder="a">
+          <input type="number" placeholder="b">
+          <input type="number" placeholder="c">
+          <span class="subResult"></span>
+        </div>
+        <div class="rowInput">
+          <input type="number" placeholder="a">
+          <input type="number" placeholder="b">
+          <input type="number" placeholder="c">
+          <span class="subResult"></span>
+        </div>
+        
+      </div>
+      
+      <button id="adding" onclick="addInputRow()">+</button>
+      <button id="subtract" onclick="removeLastRow()">-</button>
+      <br>
+      <button  id="calculationButoonFromHtml" >Calculate</button>
+      <button id="reset" onclick="resetFields()">Reset</button>
+    </div>
+
+    <p id="output"></p>
+    
+    <footer>
+      <p>&copy; 2024 Sadiqullah. All rights reserved. <br>
+      Contact: <a href="mailto:sadiqullah4017@gmail.com">sadiqullah4017@gmail.com</a><br>
+      <a href="https://www.facebook.com/sadiqullah.hossen">Sadiqullah's Facebook </a>
+      </p>
+  </footer>
+  </div>
+
+
+  <script src="/js/multi_triangle.js"></script>
+  <script src="/js/load_calculator.js"></script>
+</body>
+</html>

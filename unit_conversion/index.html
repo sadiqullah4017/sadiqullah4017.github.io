@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>একক রূপান্তর</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>একক রূপান্তর</h1>
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('length', 'result1')">Length</button>
+            <button class="tab-button" onclick="showTab('area', 'result2')">Area</button>
+        </div>
+        
+        <div id="length" class="tab-content">
+          
+            <div class="select_container">
+              
+              <label for="lengthValue">দৈর্ঘ্য :</label>
+            <input type="number" id="lengthValue" placeholder="Enter Value">
+            
+              
+            </div>
+            
+
+            <div class="input_container">
+              
+              <label for="lengthUnit">দৈর্ঘ্য:</label>
+              <select id="lengthUnit">
+                <option value="inch">ইঞ্চি</option>
+                <option value="foot">ফুট</option>
+                <option value="yard">গজ</option>
+                <option value="meter">মিটার</option>
+                <option value="kilometer">কিলোমিটার</option>
+                <option value="hat">হাত</option>
+                <option value="link">লিংক</option>
+                <option value="mile">মাইল</option>
+              </select>
+              
+            </div>
+            
+            
+        </div>
+        <div id="result1" class="resultAll">
+            <button onclick="convertLength()">কনভার্ট </button>
+            <div class="result" id="lengthResult"></div>
+        </div>
+        <div id="area" class="tab-content" style="display: none;">
+           
+              <div class="select_container">
+   
+               
+                <input type="number" id="areaValue" placeholder="Enter Value">
+              </div>
+              
+           <div class="input_container">
+             
+             
+               <label for="areaUnit">ক্ষেত্রফল:</label>
+               <select id="areaUnit">
+                 <option value="squareFeet">বর্গ ফুট</option>
+                 <option value="squareMeter">বর্গ মিটার</option>
+                 <option value="acre">একর</option>
+                 <option value="hectare">হেক্টর</option>
+                 <option value="decimal">শতাংশ</option>
+                 <option value="bigha">বিঘা</option>
+                 <option value="katha">কাঠা</option>
+                 <option value="kani">কানি</option>
+                 <option value="gonda">গন্ডা</option>
+                 <option value="kora">কড়া</option>
+                 <option value="kranti">ক্রান্তি</option>
+                 <option value="til">তিল</option>
+                 <option value="squareLink">বর্গ লিংক</option>
+                 <option value="borgoGaz">বর্গ গজ </option>
+                 <option value="ojutangsho">অজুতাংশ</option>
+                 <option value="bargoHat">বর্গ হাত</option>
+                 <option value="chain">চেইন</option>
+                 <option value="bargonol">বর্গ নল</option>
+                 <option value="kaniGonda">কানি গন্ডা</option>
+               </select>
+               
+           </div>
+        </div>
+        <div id="result2" class="resultAll" style="display: none">
+            <button onclick="convertArea()">কনভার্ট</button>
+            <div class="result" id="areaResult"></div>
+        </div>
+        </div>
+        
+        
+     <footer>
+        <p>&copy; 2024 Sadiqullah. All rights reserved. <br>
+        Contact: <a href="mailto:sadiqullah4017@gmail.com">sadiqullah4017@gmail.com</a><br>
+        <a href="https://www.facebook.com/sadiqullah.hossen">Sadiqullah's Facebook </a>
+        </p>
+    </footer>
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>

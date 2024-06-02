@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+}
+
+.container {
+    background-color: #0e0e0e;
+    padding: 20px;
+    min-height: 86vh; 
+}
+
+h1 {
+    text-align: center;
+    color: #f5f5f5; /* Dark white */
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #f5f5f5; /* Dark white */
+    color: #1e1e1e;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #acacac;
+    box-shadow: 0 0 5px #f5f5f5;
+}
+
+
+.result {
+    margin-top: 20px;
+    animation: fadeIn 1s;
+}
+
+.result div {
+    margin-bottom: 10px;
+    background-color: #2c2c2c;
+    padding: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.result div:hover, .result div:active, .result div:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px #bb86fc;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin: 5%;
+}
+
+.tabs button {
+    background-color: #2c2c2c;
+    color: #f5f5f5; /* Dark white */
+    border: 1px solid #f5f5f5;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tabs button.active {
+    background-color: #f5f5f5;
+    color: #1e1e1e;
+}
+
+.tabs button:hover {
+    background-color: #dcdcdc;
+    color: #1e1e1e;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #f5f5f5;
+}
+
+/* For styling label into input and select item */
+.tab-content {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 90%;
+  margin: 15px auto;
+  padding-left: 10px;
+}
+
+.input_container, .select_container {
+  width: 45%;
+}
+
+input, select {
+  width: 100%;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  padding: 15px 0;
+  outline: none;
+  background: transparent;
+}
+
+input::placeholder, select::placeholder {
+  color: #999;
+}
+
+label {
+  position: absolute;
+  top: -6px;
+  left: 10px;
+  background-color: #0e0e0e;
+  padding: 0 3px;
+  color: #fff;
+  font-size: 10px;
+  transition: 0.3s;
+}
+
+.resultAll {
+  margin: 10px 5%;
+}
+
+@keyframes colorChange {
+  0% { color: #f5f5f5; }
+  50% { color: #bb86fc; }
+  100% { color: #f5f5f5; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+footer {
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+    text-align: center;
+    padding: 7px;
+    border-top: 1px solid #333;
+    height : 14vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a {
+    color: #bb86fc;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer a:hover {
+    color: #f5f5f5;
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 4px 0;
+}

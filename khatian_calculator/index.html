@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>খতিয়ান ক্যালকুলেটর</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>খতিয়ান ক্যালকুলেটর</h1>
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('new', 'result1')">আনাগন্ডা</button>
+            <button class="tab-button" onclick="showTab('old', 'result2')">হিংসা</button>
+        </div>
+        
+        <div id="new">
+          <div class="horizonRow">
+            <span>মোট জমির পরিমাণ লিখুন</span>
+            <hr>
+          </div>
+          
+          <div class="tab-content">
+            <div class="input_container">
+              <label for="totalArea">মোট জমি</label>
+              <input type="number" name="totalArea" id="totalArea" placeholder="মোটি জমি (শতাংশ)"/>
+            </div>
+          </div>
+          <div class="horizonRow">
+            <span>জমিতে আপনার অংশ সিলেক্ট করুন</span>
+            <hr>
+          </div>
+          
+        <div class="tab-content">
+           <div class="input_container">
+              <label for="ana">আনা:</label>
+              <select id="ana">
+                <option value="0">শূন্য আনা</option>
+                <option value="1">৴ এক আনা</option>
+                <option value="2">৵ দুই আনা</option>
+                <option value="3">৶ তিন আনা</option>
+                <option value="4">৷ চার আনা</option>
+                <option value="5">৷৴ পাঁচ আনা</option>
+                <option value="6">৷৵ ছয় আনা</option>
+                <option value="7">৷৶ সাত আনা</option>
+                <option value="8">৷৷ আট আনা</option>
+                <option value="9">৷৷৴ নয় আনা</option>
+                <option value="10">৷৷৵ দশ আনা</option>
+                <option value="11">৷৷৶ এগারো আনা</option>
+                <option value="12">৸ বারো আনা</option>
+                <option value="13">৸৴ তেরো আনা</option>
+                <option value="14">৸৵ চৌদ্দ আনা</option>
+                <option value="15">৸৶ পনেরো আনা</option>
+              </select>
+            </div>
+        </div>
+        
+        <div class="tab-content">
+            <div class="input_container">
+              <label for="gonda">গন্ডা:</label>
+              <select id="gonda">
+                <option value="0">শূন্য গন্ডা</option>
+                <option value="1">০১ (এক গন্ডা)</option>
+                <option value="2">০২ (দুই গন্ডা)</option>
+                <option value="3">০৩ (তিন গন্ডা)</option>
+                <option value="4">০৪ (চার গন্ডা)</option>
+                <option value="5">০৫ (পাঁচ গন্ডা)</option>
+                <option value="6">০৬ (ছয় গন্ডা)</option>
+                <option value="7">০৭ (সাত গন্ডা)</option>
+                <option value="8">০৮ (আট গন্ডা)</option>
+                <option value="9">০৯ (নয় গন্ডা)</option>
+                <option value="10">১০ (দশ গন্ডা)</option>
+                <option value="11">১১ (এগারো গন্ডা)</option>
+                <option value="12">১২ (বারো গন্ডা)</option>
+                <option value="13">১৩ (তেরো গন্ডা)</option>
+                <option value="14">১৪ (চৌদ্দ গন্ডা)</option>
+                <option value="15">১৫ (পনেরো গন্ডা)</option>
+                <option value="16">১৬ (ষোল গন্ডা)</option>
+                <option value="17">১৭ (সতেরো গন্ডা)</option>
+                <option value="18">১৮ (আঠারো গন্ডা)</option>
+                <option value="19">১৯ (উনিশ গন্ডা)</option>
+              </select>
+            </div>
+  
+
+        </div>
+        <div class="tab-content">
+            <div class="input_container">
+              <label for="kora">কড়া:</label>
+              <select id="kora">
+                <option value="0">শূন্য কড়া</option>
+                <option value="1">৷  এক কড়া</option>
+                <option value="2">৷৷  দুই কড়া</option>
+                <option value="3">৸  তিন কড়া</option>
+
+              </select>
+            </div>
+         </div>
+        <div class="tab-content">
+            <div class="input_container">
+              <label for="kranti">ক্রান্তি:</label>
+              <select id="kranti">
+                <option value="0">শূন্য ক্রান্তি</option>
+                <option value="1">৴  এক ক্রান্তি</option>
+                <option value="2">৴৴  দুই ক্রান্তি</option>
+
+              </select>
+            </div>
+         </div>
+          <div class="tab-content">
+            <div class="input_container">
+              <label for="til">তিল:</label>
+              <select id="til">
+                <option value="0">শূন্য তিল</option>
+                <option value="1">০১ (এক তিল)</option>
+                <option value="2">০২ (দুই তিল)</option>
+                <option value="3">০৩ (তিন তিল)</option>
+                <option value="4">০৪ (চার তিল)</option>
+                <option value="5">০৫ (পাঁচ তিল)</option>
+                <option value="6">০৬ (ছয় তিল)</option>
+                <option value="7">০৭ (সাত তিল)</option>
+                <option value="8">০৮ (আট তিল)</option>
+                <option value="9">০৯ (নয় তিল)</option>
+                <option value="10">১০ (দশ তিল)</option>
+                <option value="11">১১ (এগারো তিল)</option>
+                <option value="12">১২ (বারো তিল)</option>
+                <option value="13">১৩ (তেরো তিল)</option>
+                <option value="14">১৪ (চৌদ্দ তিল)</option>
+                <option value="15">১৫ (পনেরো তিল)</option>
+                <option value="16">১৬ (ষোল তিল)</option>
+                <option value="17">১৭ (সতেরো তিল)</option>
+                <option value="18">১৮ (আঠারো তিল)</option>
+                <option value="19">১৯ (উনিশ তিল)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        
+        
+        <div id="result1" class="resultAll">
+            <button onclick="convertAnaGonda()">কনভার্ট </button>
+            <div class="result" id="anagondaResult"></div>
+        </div>
+        <div id="old" style="display: none;">
+           <div class="horizonRow">
+            <span>মোট জমির পরিমাণ লিখুন</span>
+            <hr>
+          </div>
+          <div class="tab-content">
+            <div class="input_container">
+              <label for="totalArea">মোট জমি</label>
+              <input type="number" name="totalArea" id="totalArea2" placeholder="মোটি জমি (শতাংশ)"/>
+            </div>
+          </div>
+          <div class="horizonRow">
+            <span>জমিতে আপনার অংশ লিখুন</span>
+            <hr>
+          </div>
+               <div class="tab-content" >
+   
+               <label for="hingsha">অংশ</label>
+                <input type="number" id="hingsha" placeholder="অংশ লিখুন">
+              </div>
+       
+         
+        </div>
+        <div id="result2" class="resultAll" style="display: none">
+            <button onclick="convertHingsha()">কনভার্ট</button>
+            <div class="result" id="hingshaResult"></div>
+        </div>
+      </div>
+      
+     <footer>
+        <p>&copy; 2024 Sadiqullah. All rights reserved. <br>
+        Contact: <a href="mailto:sadiqullah4017@gmail.com">sadiqullah4017@gmail.com</a><br>
+        <a href="https://www.facebook.com/sadiqullah.hossen">Sadiqullah's Facebook </a>
+        </p>
+    </footer>
+      
+    <script src="script.js"></script>
+</body>
+</html>

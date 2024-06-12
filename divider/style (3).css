@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#top-bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 500;
+    
+}
+
+#back-button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#back-button:hover {
+    text-decoration: underline;
+}
+
+#canvas-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    background-color: #fff;
+    width: 100%;
+}
+
+canvas {
+    display: block;
+    border: none;
+    border-radius: 10px;
+}
+
+#controls {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #CFCFCF;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle:active {
+    background-color: #FFBEBE;
+}
+
+img {
+    width: 60%;
+}
+
+.horizon {
+    display: flex; /* Changed to flex to align items horizontally */
+}
+
+input {
+  
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid transparent; 
+  font-size: 16px;
+  width: 40%;
+  transition: all 0.3s ease;
+  background-color: #CFCFCF; 
+  color: #000; 
+}
+
+input:focus {
+  border-color: #007bff; 
+  box-shadow: 0 0 10px #007bff;
+  outline: none;
+}
+
+input::placeholder {
+  color: #999; 
+}
+
+input:focus::placeholder {
+  color: transparent; 
+}
+
+input[type='range'] {
+    padding: 0;
+    margin: 0;
+    width: 40vw;
+    height: 0px;
+    -webkit-appearance: none;
+    background-color: #FFDCDC;
+    margin-top: 7px;
+    margin-right: 7px;
+    border-radius: 25px;
+    appearance: none;
+    outline: none !important;
+  
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+    height: 13px;
+    color: #000;
+}
+
+input[type='range']::-webkit-slider-thumb { 
+    -webkit-appearance: none;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    cursor: ew-resize;
+    border: #000 2px solid !important;
+    background-color: white;
+    cursor: pointer;
+    appearance: none;
+    z-index: 999;     
+} 
+input[type='range']::-moz-range-thumb {
+    width: 40vw;
+    height: 0px;
+    border-radius: 50%;
+    background: #000;
+    cursor: pointer;
+} 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuadDividerPro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="fabric.min.js"></script>
+</head>
+<body>
+    
+    <div id="container">
+        <div id="top-bar">
+          <input type="range" min="0.2" max="10" value="1" id="zoomRange" step="0.1">
+        </div>
+        <div id="canvas-container">
+            <canvas id="c"></canvas>
+        </div>
+        <div id="controls">
+          <div class="horizon">
+            <button id="line" class="circle" onclick="setDrawingMode('line')"><img src="image/line.png"></button>
+            <button id="undo" class="circle" onclick="undo()"><img src="image/undo.png"></button>
+          </div>
+          <div class="horizon">
+            <button id="divideLine" class="circle" onclick="setDividingMode('divide')"><img src="image/divide.png"></button>
+            <button id="reset" class="circle" onclick="removeDivideLine()"><img src="image/reset.png"></button>
+          </div>
+          <div class="horizon">
+            <button id="area" class="circle" onclick="setAreaMode('area')"><img src="image/area.png"></button>
+            <button id="divide" class="circle" ><img src="image/divided.png"></button>
+           </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>    
+</body>
+</html>

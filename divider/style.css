@@ -7,6 +7,7 @@ body {
     height: 100vh;
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
+    box-sizing: border-box;
 }
 
 #container {
@@ -17,14 +18,40 @@ body {
     height: 100%;
 }
 
-#top-bar {
+#top-bar{
+    color: #fff;
     position: absolute;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
     top: 0;
     right: 0;
+    width: 100vw;
+    height: 50px;
     z-index: 500;
+    background: #007037;
     
 }
-
+#commandText {
+    display: relative;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: center;
+    font-size: 14px;
+    padding:0 10px;
+    
+}
+#commandText img {
+  display: absolute;
+  left: 0;
+  padding-right: 10px;
+  top: 0;
+  transform: translateY(20%);
+}
+#commandTextDiv {
+  display: inline;
+  color: #fff;
+}
 #back-button {
     background-color: transparent;
     border: none;
@@ -50,7 +77,6 @@ body {
 canvas {
     display: block;
     border: none;
-    border-radius: 10px;
 }
 
 #controls {
@@ -66,7 +92,7 @@ canvas {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #CFCFCF;
+    background-color: #CCFFCC;
     margin-bottom: 10px;
     margin-right: 10px;
     border: none;
@@ -79,11 +105,16 @@ canvas {
 }
 
 .circle:active {
-    background-color: #FFBEBE;
+    background-color: #007037;
 }
 
 img {
     width: 60%;
+}
+.indicateIcon {
+  width: 20px;
+  filter: invert(1);
+  cursor: pointer;
 }
 
 .horizon {
@@ -119,11 +150,12 @@ input:focus::placeholder {
 input[type='range'] {
     padding: 0;
     margin: 0;
+    
     width: 40vw;
     height: 0px;
     -webkit-appearance: none;
-    background-color: #FFDCDC;
-    margin-top: 7px;
+    background-color: #CCFFCC;
+    
     margin-right: 7px;
     border-radius: 25px;
     appearance: none;
@@ -134,11 +166,13 @@ input[type='range'] {
 input[type='range']::-webkit-slider-runnable-track {
     height: 13px;
     color: #000;
+    
 }
 
 input[type='range']::-webkit-slider-thumb { 
     -webkit-appearance: none;
     width: 13px;
+    
     height: 13px;
     border-radius: 50%;
     cursor: ew-resize;
@@ -150,8 +184,27 @@ input[type='range']::-webkit-slider-thumb {
 } 
 input[type='range']::-moz-range-thumb {
     width: 40vw;
-    height: 0px;
+    
+    height: 13px;
     border-radius: 50%;
     background: #000;
     cursor: pointer;
 } 
+
+
+
+.black {
+    filter: grayscale(100%) brightness(0) invert(1);
+}
+
+.white {
+    filter: grayscale(100%) brightness(2);
+}
+
+.green {
+    background-color: #007037;
+}
+
+.light-green {
+    background-color: #CCFFCC;
+}

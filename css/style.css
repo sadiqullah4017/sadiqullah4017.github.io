@@ -1,0 +1,204 @@
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.tiro-bangla-regular {
+  font-family: "Tiro Bangla", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+        body {
+            font-family: "Roboto", Arial, sans-serif;
+            background-color: #000;
+            color: #ffffff;
+        }
+        
+        
+        
+        h2 {
+            text-align: center;
+        }
+
+        
+        p {
+            display: inline-block;
+            width: 100%;
+            flex-direction: column;
+            margin-bottom: 5px;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            font-family: "Tiro Bangla";
+        }
+
+        
+       
+        a{
+          text-decoration: none;
+          color: lightgray;
+        }
+        
+        img {
+          position: relative;
+          height: auto;
+          width:100%;
+        }
+        
+        footer {
+          background: #ffffff16;
+          padding-top: 10px;
+          padding-bottom: 10px
+        }
+        #sub {
+          width: 30%;
+          height: auto;
+        }
+        .elements_box {
+           margin: 0 5vw;
+        }
+        .elements_box div {
+          display: inline-block;
+          box-sizing: border-box;
+          width: 44vw;
+          margin-bottom: 35px;
+        }
+        .elements_box div img {
+          position: relative;
+        }
+        .elements_box p {
+          font-size: 14px;
+          position: relative;
+          bottom: 0px;
+        }
+        
+        .logo {
+          display: inline-flex;
+        }        
+        header {
+          background: #202020;
+          height: 50px;
+          width: 100vw;
+          position: fixed;
+          top: 0;
+          left: 0;
+          line-height: 50px;
+          z-index: 1;
+          
+        }
+        .logo_divider {
+          
+          text-align: left;
+          
+          vertical-align: center;
+        }
+        .logo img {
+          width: 40px;
+          height: 40px;
+          margin: 5px 15px 5px 5px;
+        }
+        
+        
+        /**   nav menus****/
+        #menu {
+            width: 65vw;
+            height: 65vh;
+            background: #282828;
+            position: fixed;
+            overflow-x: auto;
+            right: -65vw; /* Start off-screen */
+            top: 50px;
+            transition: transform 0.3s ease-in-out; /* Add transition for transform */
+            z-index: 1;
+          }
+          
+          #menu.show {
+            transform: translateX(-100%); /* Slide in from right side */
+          }
+          
+        nav ul {
+          list-style-type: none;
+          line-height: 35px;
+          padding: 17px 10px;
+        }
+        
+        nav ul li a {
+          color: #ffff;
+          width: 50vw;
+          height: 30px;
+        }
+        #menuButton {
+          display: flex;
+          justify-content: center;
+          justify-items: center;
+          font-size: 25px;
+          position: absolute;
+          line-height: 6px;
+          height: 50px;
+          width: 50px;
+          top: -3px;
+          right: 0;
+          font-weight: 900;
+        }
+        
+        
+        
+        .calculator_toggle {
+          top: 0px;
+          right: 60px;
+          position: fixed;
+          width: 50px;
+          height: 50px;
+          z-index: 1000;
+          cursor: pointer;
+        }
+        
+        
+        #logOutButton, .logOutButton {
+          cursor: pointer;
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          color: #fff;
+          width: 80px;
+          height:30px;
+          background: #202020;
+          border: 1px solid #aaa;
+          outline: none;
+          box-shadow: 0 0 5px #aaa;
+        }
+        #userInfo {
+          position: absolute;
+          bottom: 50px;
+          left: 0;
+          line-height: 20px;
+          font-size: 10px;
+        }
+        
+        .second_header {
+          padding: 10px;
+          margin-top: 50px;
+          font-size: 14px;
+        }
+        .second_header p {
+          text-align: left;
+        }
+        .logOutButton {
+          position: relative;
+          margin: 10px 20px;
+          
+          height: 26px;
+          }
